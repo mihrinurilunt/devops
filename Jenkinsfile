@@ -5,7 +5,6 @@ pipeline {
         DOCKER_REGISTRY = 'mihrinurilunt/app'
         DOCKER_CREDENTIALS = 'Jenkins'
         DOCKER_IMAGE = ''
-        POSTGRES_PASSWORD = credentials('postgres_password')  // Ensure you have this credential set in Jenkins
     }
 
     stages {
