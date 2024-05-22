@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REGISTRY = 'mihrinurilunt/app'
-        DOCKER_CREDENTIALS = 'Jenkins'
-        DOCKER_IMAGE = ''
-        GITHUB_TOKEN = credentials('GithubToken')
+        DOCKER_REGISTRY = 'mihrinurilunt/app'  // Docker Hub repository
+        DOCKER_CREDENTIALS = 'Jenkins'  // Jenkins credentials id for Docker Hub
+        GITHUB_TOKEN = credentials('GithubToken')  // Jenkins credentials id for GitHub token
     }
 
     stages {
@@ -26,7 +25,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    DOCKER_IMAGE = docker.build("${DOCKER_REGISTRY}:latest")
+                    DOCKER_IMAGE = docker.build("mihrinurilunt/devops:latest")
                 }
             }
         }
