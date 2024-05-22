@@ -5,6 +5,7 @@ pipeline {
         DOCKER_REGISTRY = 'mihrinurilunt/app'
         DOCKER_CREDENTIALS = 'Jenkins'
         DOCKER_IMAGE = ''
+        GITHUB_TOKEN = credentials('GithubToken')
     }
 
     stages {
